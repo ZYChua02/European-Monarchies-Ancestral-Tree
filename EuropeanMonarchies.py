@@ -6,7 +6,8 @@ def print_menu(monarchies_list):
     print('MAIN MENU\n=========')
     for i in range(1,len(monarchies_list)+1):
         print("[{}]".format(i),monarchies_list[i-1])
-
+    print()
+    print('[0] Exit the program')
 
 
 # Loop for the program to function
