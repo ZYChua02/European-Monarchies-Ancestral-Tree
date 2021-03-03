@@ -13,9 +13,13 @@ def print_menu(monarchies_list):
 
 def test_insertion():
     #Elizabeth II
-    root = at.Node(1, "Elizabeth II")
-    at.insert(root, at.Node(2, "Geroge VI"))
-    at.insert(root, at.Node(3, "Elizabeth Bowes-Lyon"))
+    root = at.Node(1, "Queen Elizabeth II")
+    at.insert(root, at.Node(2, "King George VI"))
+    at.insert(root, at.Node(3, "Queen Elizabeth Bowes-Lyon"))
+    at.insert(root, at.Node(4, "King George V"))
+    at.insert(root, at.Node(5, "Queen Mary"))
+    at.insert(root, at.Node(6, "Claude Bowes-Lyon"))
+    at.insert(root, at.Node(7, "Cecilia Bowes-Lyon"))
 # Loop for the program to function
 while True:
     print_menu(monarchies_list)
