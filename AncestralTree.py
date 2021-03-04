@@ -13,8 +13,8 @@ def insert(root,node):
     #For Male Ancestors (Even Numbers) 
     elif (node.val % 2 == 0):
         #Edge case for male ancestors in the female line 
-        if (((node.val)/(2)) % 2 != 0): # -1 is not needed as wives are always +1 of their husbands
-            child = search(root, ((node.val)/(2)))
+        if (node.val/2 % 2 != 0): # -1 is not needed as wives are always +1 of their husbands
+            child = search(root, (node.val/(2)))
             child.left = insert(child.left, node)
         else:
             root.left = insert(root.left, node)
@@ -38,7 +38,32 @@ def search(root,number):
             return search(root.left, number)
         else:
             return search(root.right, number)
-#def print_Ancenstraltree(tree):
+
+#Print tree in level order using queue (from geeksforgeeks.com)
+def print_Ancenstraltree(root):
+    #Base case (Tree is empty)
+    if root == None:
+        return
+    queue = [] #Empty list for level order traversal
+    queue.append(root) #Add in root of tree and intialise height
+    
+    while(len(queue) > 0):
+        #Print front of queue
+        if queue[0].val == 1:
+            print("\nThe Current Monarch: {0}\n".format(queue[0].val2))
+            print("His/Her Ancestors in Pedigree Chart Order:")
+        else:
+            print(queue[0].val2)
+        node = queue.pop(0) #Removing it from the queue
+ 
+        #Enqueue node left child if any
+        if node.left != None:
+            queue.append(node.left)
+ 
+        #Enqueue node right child if any
+        if node.right != None:
+            queue.append(node.right)
+
 
 
 

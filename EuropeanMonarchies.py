@@ -4,14 +4,14 @@ monarchies_list = ['Kingdom of Belgium','Kingdom of Denmark','Principality of Li
 
 #Print menu
 def print_menu(monarchies_list):
+    print()
     print('European Hereditary Monarchies\n=========')
     for i in range(1,len(monarchies_list)+1):
         print("[{}]".format(i),monarchies_list[i-1])
-    print()
-    print('[0] Exit the program')
+    print('[0] Exit the program\n')
 
-
-def test_insertion():
+#Insertion of current monarch (Queen Elizabeth II) Ancestors
+def insertionofAncestors10():
     #Elizabeth II
     root = at.Node(1, "Queen Elizabeth II")
     at.insert(root, at.Node(2, "King George VI"))
@@ -20,6 +20,7 @@ def test_insertion():
     at.insert(root, at.Node(5, "Queen Mary"))
     at.insert(root, at.Node(6, "Claude Bowes-Lyon"))
     at.insert(root, at.Node(7, "Cecilia Bowes-Lyon"))
+    at.print_Ancenstraltree(root)
 # Loop for the program to function
 while True:
     print_menu(monarchies_list)
