@@ -29,15 +29,16 @@ def insert(root,node):
     return root
 
 def search(root,number):
-    if root == None:
-        return None;
+    if (root == None): 
+        return None
+
     else:
-        if (root.val == number):
-            return root
-        elif (number % 2 == 0):
-            return search(root.left, number)
-        else:
-            return search(root.right, number)
+        maleline = search(root.left, number)  #Search male line
+        femaleline = search(root.right, number) #Search female line
+        return root
+        
+ 
+
 
 #Print tree in level order using queue (from geeksforgeeks.com)
 def print_Ancenstraltree(root):
@@ -53,7 +54,7 @@ def print_Ancenstraltree(root):
             print("\nThe Current Monarch: {0}\n".format(queue[0].val2))
             print("His/Her Ancestors in Pedigree Chart Order:")
         else:
-            print(queue[0].val2)
+            print("{0} {1}".format(queue[0].val,queue[0].val2))
         node = queue.pop(0) #Removing it from the queue
  
         #Enqueue node left child if any
