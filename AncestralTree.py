@@ -52,9 +52,19 @@ def print_Ancenstraltree(root):
         #Print front of queue
         if queue[0].val == 1:
             print("\nThe Current Monarch: {0}\n".format(queue[0].val2))
-            print("His/Her Ancestors in Pedigree Chart Order:")
-        else:
-            print("{0} {1}".format(queue[0].val,queue[0].val2))
+            print("His/Her Ancestors:")
+        elif queue[0].val == 2:
+            print("Father: {0}".format(queue[0].val2)) #Print Father
+        elif queue[0].val == 3:
+            print("Mother: {0}".format(queue[0].val2)) # Print Mother
+            print("\nGrandparents: ")
+        elif (queue[0].val >= 4) and (queue[0].val <= 6): #Print the first three grandparents
+            print(queue[0].val2)
+        elif queue[0].val == 7: #Print the last grandparent
+            print(queue[0].val2)
+            print("\nGreat-Grandparents:")
+        else: # Print the great grandparents
+            print(queue[0].val2)
         node = queue.pop(0) #Removing it from the queue
  
         #Enqueue node left child if any
@@ -64,6 +74,7 @@ def print_Ancenstraltree(root):
         #Enqueue node right child if any
         if node.right != None:
             queue.append(node.right)
+    
 
 
 
