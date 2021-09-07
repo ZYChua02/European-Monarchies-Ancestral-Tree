@@ -1,6 +1,7 @@
 # European-Monarchies-Ancestral-Tree
 This is a side project displaying all the current European Hereditary Monarchies Monarchs Ancestry
 
+When the program is executed, the menu will be as follows
 ```
 European Hereditary Monarchies
 =========
